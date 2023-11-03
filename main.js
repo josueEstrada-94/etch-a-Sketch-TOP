@@ -1,3 +1,6 @@
+//global variable for color.
+let color = 'black';
+
 document.addEventListener('DOMContentLoaded', function(){
     createContainer(16);
 
@@ -23,9 +26,7 @@ function createContainer(size){
         let div = document.createElement('div');
 
 //Event that changes the color when the mouse pass over the container to black. 
-        div.addEventListener('mouseover', function(){
-            div.style.backgroundColor = 'black';
-        });
+        div.addEventListener('mouseover', colorDiv);
         container.insertAdjacentElement("beforeend", div);
     }
 }
@@ -46,5 +47,24 @@ function getSize(){
         return input;
     }
 }
-
+//Setting the functions that change the color, with black as the default.
+//and the reset button that changes all the divs to white. 
+function colorDiv(){
+    if(color == 'random'){
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+    } 
+    else{
+        this.style.backgroundColor = 'black';
+    }
+}
  
+function setColor(colorChoice){
+    color = colorChoice;
+
+}
+
+function resetContent(){
+    let divs = document.querySelectorAll('div');
+    divs.forEach((div)=>div.style.backgroundColor = 'white');
+}
+
