@@ -5,6 +5,10 @@ body{
     flex-direction: column;
     background: rgb(255, 255, 255);
     max-width: 100vp;
+    max-height: 100%;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 #header {
@@ -13,7 +17,12 @@ body{
     flex-direction: row;
     width: 400px;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+h6 {
+    font-size: 17px;
 }
 
 #container {
@@ -31,7 +40,7 @@ body{
     width: 500px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 button {
@@ -70,8 +79,10 @@ footer {
     font-weight: 700;
     width: 100%;
     text-align: center;
-    padding: 20px 8px;
-    margin-top: 30px;
+    padding: 28px 0px;
+    margin-top: 20px;
+    
+    
 }
 
 a{
