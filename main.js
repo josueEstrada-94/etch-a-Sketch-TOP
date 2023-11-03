@@ -1,8 +1,22 @@
 //global variable for color.
 let color = 'black';
+let click = false;
 
 document.addEventListener('DOMContentLoaded', function(){
     createContainer(16);
+
+    document.querySelector('body').addEventListener('click', function(e){
+        if(e.target.tagName != 'BUTTON'){
+            click = !click;
+            let draw = document.querySelector("#draw");
+            if(click){
+                draw.innerHTML = 'Now you can Draw!';
+            }
+            else{
+                draw.innerHTML = 'You are not allowed to Draw'
+            }
+        }
+    })
 
     let popup = document.querySelector('#popup');
     popup.addEventListener('click', function(){
@@ -50,11 +64,14 @@ function getSize(){
 //Setting the functions that change the color, with black as the default.
 //and the reset button that changes all the divs to white. 
 function colorDiv(){
-    if(color == 'random'){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
-    } 
-    else{
-        this.style.backgroundColor = 'black';
+    if(click){
+    
+        if(color == 'random'){
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+        } 
+        else{
+            this.style.backgroundColor = 'black';
+        }
     }
 }
  
