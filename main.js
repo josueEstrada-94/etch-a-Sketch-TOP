@@ -21,7 +21,11 @@ function createContainer(size){
 
     for (let i = 0; i < numDivs; i++){
         let div = document.createElement('div');
-        div.style.backgrounsdColor = 'red';
+
+//Event that changes the color when the mouse pass over the container to black. 
+        div.addEventListener('mouseover', function(){
+            div.style.backgroundColor = 'black';
+        });
         container.insertAdjacentElement("beforeend", div);
     }
 }
